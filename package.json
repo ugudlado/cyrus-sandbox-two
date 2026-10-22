@@ -1,0 +1,10 @@
+{
+  "name": "cyrus-sandbox-two",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Second throwaway app for testing self-hosted Cyrus with several repos.",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": { "start": "node src/server.js", "test": "node --test" },
+  "engines": { "node": ">=20" }
+}
