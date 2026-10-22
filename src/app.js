@@ -6,6 +6,11 @@ export function handle(req, res) {
 		res.end(JSON.stringify({ name: "cyrus-sandbox-two" }));
 		return;
 	}
+	if (req.method === "GET" && req.url === "/health") {
+		res.writeHead(200, { "content-type": "application/json" });
+		res.end(JSON.stringify({ ok: true }));
+		return;
+	}
 	res.writeHead(404, { "content-type": "application/json" });
 	res.end(JSON.stringify({ error: "not found" }));
 }

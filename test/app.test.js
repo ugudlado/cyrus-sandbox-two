@@ -17,6 +17,12 @@ test("GET / returns the app name", async () => {
 	assert.deepEqual(await res.json(), { name: "cyrus-sandbox-two" });
 });
 
+test("GET /health returns ok", async () => {
+	const res = await fetch(`${base}/health`);
+	assert.equal(res.status, 200);
+	assert.deepEqual(await res.json(), { ok: true });
+});
+
 test("unknown path returns 404", async () => {
 	const res = await fetch(`${base}/nope`);
 	assert.equal(res.status, 404);
